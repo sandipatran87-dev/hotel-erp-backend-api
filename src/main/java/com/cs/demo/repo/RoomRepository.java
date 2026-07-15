@@ -17,5 +17,7 @@ public interface RoomRepository extends JpaRepository<Room, UUID> {
     List<Room> findByRoomStatus(RoomStatus roomStatus);
     
     List<Room> findByRoomTypeRoomTypeId(UUID roomTypeId);
+    
+    
 
 }
