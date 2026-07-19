@@ -11,6 +11,7 @@ public class DashboardResponse {
     private long paidBills;
     private BigDecimal totalRevenue;
     private long menuItems;
+    private Long bookedTables;
 
     public long getMenuItems() {
 		return menuItems;
@@ -70,5 +71,14 @@ public class DashboardResponse {
     public void setTotalRevenue(BigDecimal totalRevenue) {
         this.totalRevenue = totalRevenue;
     }
+
+	public Long getBookedTables() {
+		return bookedTables;
+	}
+
+	public void setBookedTables(Long bookedTables) {
+		this.bookedTables = bookedTables;
+	}
+    
 
 }

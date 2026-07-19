@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.cs.demo.entity.Booking;
 import com.cs.demo.entity.Room;
+import com.cs.demo.enums.BookingStatus;
 import com.cs.demo.enums.RoomStatus;
 import com.cs.demo.repo.BookingRepository;
 import com.cs.demo.repo.RoomRepository;
@@ -59,10 +60,16 @@ public class BookingService {
 
         booking.setTotalAmount(amount);
 
-        // Update Room Status
+     // Room Status = BOOKED
         room.setRoomStatus(RoomStatus.BOOKED);
+
+        // Booking Status = BOOKED
+        booking.setBookingStatus(BookingStatus.BOOKED);
+
+        // Save Room
         roomRepo.save(room);
 
+        // Save Booking
         return bookingRepo.save(booking);
     }
 

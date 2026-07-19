@@ -11,5 +11,7 @@ import com.cs.demo.entity.RestaurantTable;
 public interface RestaurantTableRepository extends JpaRepository<RestaurantTable, UUID> {
 	
 	long countByTableStatus(String tableStatus);
+	
+
 
 }

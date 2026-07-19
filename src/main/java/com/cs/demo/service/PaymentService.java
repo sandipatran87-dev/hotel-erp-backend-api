@@ -103,7 +103,7 @@ public class PaymentService {
 
             Booking booking = bill.getRoomBooking();
 
-            booking.setBookingStatus(BookingStatus.COMPLETED);
+            booking.setBookingStatus(BookingStatus.CHECKED_OUT);
 
             bookingRepo.save(booking);
 

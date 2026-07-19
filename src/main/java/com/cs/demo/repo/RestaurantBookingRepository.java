@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.cs.demo.entity.Customer;
 import com.cs.demo.entity.RestaurantBooking;
 
 public interface RestaurantBookingRepository extends JpaRepository<RestaurantBooking, UUID> {
@@ -24,5 +25,7 @@ public interface RestaurantBookingRepository extends JpaRepository<RestaurantBoo
             LocalDate bookingDate,
             LocalTime bookingTime
     );
+    
+    long countByCustomer(Customer customer);
 
 }

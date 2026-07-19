@@ -22,7 +22,7 @@ public class DashboardService {
     private final BillRepository billRepo;
     private final PaymentRepository paymentRepo;
     private final MenuItemRepository menuItemRepo;
-
+   
     public DashboardService(
     		  RoomRepository roomRepo,
     	        RestaurantTableRepository tableRepo,
@@ -47,9 +47,15 @@ public class DashboardService {
 
         response.setBookedRooms(
                 roomRepo.countByRoomStatus(RoomStatus.BOOKED));
+        
 
         response.setAvailableTables(
                 tableRepo.countByTableStatus("AVAILABLE"));
+        
+        response.setBookedTables(
+                tableRepo.countByTableStatus("RESERVED"));
+     
+        
         
         response.setMenuItems( menuItemRepo.count());
 
